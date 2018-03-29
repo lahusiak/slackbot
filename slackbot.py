@@ -16,7 +16,7 @@ class SlackHandler(RequestHandler):
 
         sc.api_call(
             "chat.postMessage",
-            channel="C0G9QF9GW",
+            channel="C9ZD57E8P",
             text="Hello from Python! :tada:"
         )
         self.write('It works!')
