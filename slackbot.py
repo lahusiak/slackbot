@@ -14,12 +14,12 @@ class SlackHandler(RequestHandler):
         slack_token = os.environ["SLACKBOT_TEST_TOKEN"]
         sc = SlackClient(slack_token)
 
-        response = sc.api_call(
-            "channels.list",
-            # channel="C9ZD57E8P",
-            # text="Hello from Python! :tada:"
+        sc.api_call(
+            "chat.postMessage",
+            channel="C9YAYTJUA",
+            text="Hello Laryssa & Ola! :tada:"
         )
-        self.write(response)
+        self.write('It works!')
 
 
 def make_app():
