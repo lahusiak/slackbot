@@ -11,7 +11,7 @@ DEFAULT_PORT = 8080
 
 class SlackHandler(RequestHandler):
     def get(self):
-        slack_token = os.environ["SLACKBOT_TOKEN"]
+        slack_token = os.environ["SLACKBOT_TEST_TOKEN"]
         sc = SlackClient(slack_token)
 
         response = sc.api_call(
