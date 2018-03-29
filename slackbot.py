@@ -15,7 +15,7 @@ class SlackHandler(RequestHandler):
         sc = SlackClient(slack_token)
 
         response = sc.api_call(
-            "channel.list",
+            "channels.list",
             # channel="C9ZD57E8P",
             # text="Hello from Python! :tada:"
         )
