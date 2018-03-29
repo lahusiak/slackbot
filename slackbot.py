@@ -1,4 +1,5 @@
 import os
+from slackclient import SlackClient
 from tornado.ioloop import IOLoop
 from tornado.web import (
     Application,
@@ -10,7 +11,15 @@ DEFAULT_PORT = 8080
 
 class SlackHandler(RequestHandler):
     def get(self):
-        self.write("It works!")
+        slack_token = os.environ["SLACKBOT_TOKEN"]
+        sc = SlackClient(slack_token)
+
+        sc.api_call(
+            "chat.postMessage",
+            channel="C0G9QF9GW",
+            text="Hello from Python! :tada:"
+        )
+        self.write('It works!')
 
 
 def make_app():
